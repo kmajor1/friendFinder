@@ -5,9 +5,10 @@ const htmlRoutes = require('./app/routing/htmlRoutes')
 
 
 
-let PORT = 3000
+let PORT = process.env.PORT ||  3000 
 
-server.use(htmlRoutes)
+server.use(htmlRoutes.routeHome)
+server.use(htmlRoutes.routeSurvey)
 
 server.listen(PORT,function(){
   console.log(`Listening on port ${PORT}`)
