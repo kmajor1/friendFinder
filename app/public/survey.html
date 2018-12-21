@@ -15,15 +15,15 @@
   <div class="container">
     <h1>Survey Questions</h1>
     <hr>
-    <form>
+    <form id="surveyForm">
       <h2>About You</h2>
       <div class="form-group">
         <label for="userName">Your Name*</label>
-        <input id="userName" class="form-control" type="text">
+        <input id="userName" class="form-control" type="text" name="userName">
       </div>
       <div class="form-group">
-        <label for="userImage">Link to your image*</label>
-        <input id="userImage" class="form-control" type="text">
+        <label for="photo">Link to your image*</label>
+        <input id="photo" class="form-control" type="text" name="photo">
       </div>
       <hr>
       <div class="form-group">
@@ -31,7 +31,7 @@
           <h3>Question 1</h3>
         </label>
         <p><strong>Your mind is always buzzing with unexplored ideas and plans.</strong></p>
-        <select id="q1" class="form-control">
+        <select id="q1" class="form-control question" name="q1">
           <option value="1">1 (Strongly Diasgree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -44,7 +44,7 @@
           <h3>Question 2</h3>
         </label>
         <p><strong>Generally speaking, you rely more on your experience than your imagination.</strong></p>
-        <select id="q2" class="form-control">
+        <select id="q2" class="form-control question" name="q2">
           <option value="1">1 (Strongly Diasgree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -57,7 +57,7 @@
           <h3>Question 3</h3>
         </label>
         <p><strong>You find it easy to stay relaxed and focused even when there is some pressure.</strong></p>
-        <select id="q3" class="form-control">
+        <select id="q3" class="form-control question">
           <option value="1">1 (Strongly Diasgree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -70,7 +70,7 @@
           <h3>Question 4</h3>
         </label>
         <p><strong>You rarely do something just out of sheer curiosity.</strong></p>
-        <select id="q4" class="form-control">
+        <select id="q4" class="form-control question">
           <option value="1">1 (Strongly Diasgree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -83,7 +83,7 @@
           <h3>Question 5</h3>
         </label>
         <p><strong>People can rarely upset you.</strong></p>
-        <select id="q5" class="form-control">
+        <select id="q5" class="form-control question">
           <option value="1">1 (Strongly Diasgree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -96,7 +96,7 @@
           <h3>Question 6</h3>
         </label>
         <p><strong>It is often difficult for you to relate to other people's feelings.</strong></p>
-        <select id="q6" class="form-control">
+        <select id="q6" class="form-control question">
           <option value="1">1 (Strongly Diasgree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -109,7 +109,7 @@
           <h3>Question 7</h3>
         </label>
         <p><strong>In a discussion, truth should be more important than people's sensitivities.</strong></p>
-        <select id="q7" class="form-control">
+        <select id="q7" class="form-control question">
           <option value="1">1 (Strongly Diasgree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -122,7 +122,7 @@
           <h3>Question 8</h3>
         </label>
         <p><strong>You rarely get carried away by fantasies and ideas.</strong></p>
-        <select id="q8" class="form-control">
+        <select id="q8" class="form-control question">
           <option value="1">1 (Strongly Diasgree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -134,8 +134,9 @@
         <label for="q9">
           <h3>Question 9</h3>
         </label>
-        <p><strong>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</strong></p>
-        <select id="q9" class="form-control">
+        <p><strong>You think that everyone’s views should be respected regardless of whether they are supported by
+            facts or not.</strong></p>
+        <select id="q9" class="form-control question">
           <option value="1">1 (Strongly Diasgree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -148,7 +149,7 @@
           <h3>Question 10</h3>
         </label>
         <p><strong>You feel more energetic after spending time with a group of people.</strong></p>
-        <select id="q10" class="form-control">
+        <select id="q10" class="form-control question">
           <option value="1">1 (Strongly Diasgree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -156,8 +157,13 @@
           <option value="5">5 (Strongly Agree)</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary w-100 text-center mb-5"><h3>Submit</h3></button>
+      <button id="submit" type="submit" class="btn btn-primary w-100 text-center mb-5">
+        <h3>Submit</h3>
+      </button>
     </form>
+    <div id="results">
+
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -166,6 +172,35 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    // global variables 
+    let scores = []
+    let scoreElements = $(".question")
+    // submit handler 
+    let handleSubmit = function (event) {
+      // prevent default behaviour 
+      event.preventDefault() 
+      // structure and array of scores 
+      for (var i = 0; i < scoreElements.length; i++) {
+        scores.push(parseInt(scoreElements[i].value.substring(0,1)))
+      }
+      // grab values and structure into object 
+      var surveyData = {
+        userName: $("#userName").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: scores
+      }
+      console.log(surveyData)
+      $.post('/api/friends', surveyData).then(function(data){
+        console.log(data)
+      })
+    }
+
+    $("#submit").on('click',handleSubmit)
+
+  </script>
 </body>
 
 </html>
