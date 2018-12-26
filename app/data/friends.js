@@ -4,15 +4,15 @@ let friends = [
     "userName":"Angela Martin",
     "photo":"https://media.giphy.com/media/iFbunNLuHo1PO/giphy.gif",
     "scores":[
-        5,
         1,
-        4,
-        4,
-        5,
         1,
-        2,
-        5,
-        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1
       ]
   },
@@ -21,16 +21,16 @@ let friends = [
     "userName": "Michael Scott",
     "photo": "https://media.giphy.com/media/12XMGIWtrHBl5e/giphy.gif",
     "scores": [
-      1,
-      1,
-      2,
-      2,
       3,
       3,
-      2,
-      2,
-      2,
-      1
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
     ]
   },
   {
@@ -45,8 +45,8 @@ let friends = [
       5,
       5,
       5,
-      4,
-      4
+      5,
+      5
 
     ]
   }
