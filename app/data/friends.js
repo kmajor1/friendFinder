@@ -1,5 +1,6 @@
 let friends = [
   {
+    // mid-score user 
     "userName":"Ahmed",
     "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
     "scores":[
@@ -14,6 +15,40 @@ let friends = [
         4,
         1
       ]
+  },
+  {
+    // low score user, expect this as a result of entering low scores 
+    "userName": "Bob",
+    "photo": "someURL",
+    "scores": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      1
+    ]
+  },
+  {
+    "userName":"HighScorer",
+    "photo": "someURL",
+    "scores": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      4,
+      4
+
+    ]
   }
 
   
