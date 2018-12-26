@@ -7,9 +7,10 @@ module.exports = function(app) {
   })
   
   app.post('/api/friends', function(req,res){
-    let smallestDiff = 50 // this is set to the max possible difference between two friends
+    console.log('New Post Req')
+    let largestDiff = 500 // this is set to the max possible difference between two friends
     let submittedSurveyData = req.body
-    let newUserScore = 0 
+    var newUserScore = 0
     // determine the overall score 
     for (var i = 0; i < submittedSurveyData.scores.length; i++) {
       // calculate the score 
@@ -20,28 +21,32 @@ module.exports = function(app) {
       // check the score value 
       // loop through and add the scores 
       let friendToCompare = friends[i].scores
-      console.log(friendToCompare)
       var currentBuddyScore = 0
       for (var j = 0; j < friendToCompare.length; j++) {
         
         currentBuddyScore += friendToCompare[j]
       }
       // calculate the difference between the scores
+      console.log(`current friend in loop has score of ${currentBuddyScore}`)
+      console.log(`the score of the survey is: ${newUserScore}`)
       let scoreDiff = Math.abs(currentBuddyScore - newUserScore)
-      console.log(currentBuddyScore)
-      console.log(newUserScore)
+      console.log(`the diff in scores is ${scoreDiff}`)
       // is the current difference less than or equal to the default or last difference? 
-      if (scoreDiff <= smallestDiff) {
+      console.log(`smallest diff is: ${largestDiff}`)
+      if (scoreDiff <= largestDiff) {
         // record this as the current best friend 
         var currentBestFriend = {
           userName: friends[i].userName,
           photo: friends[i].photo
         }
+        largestDiff = scoreDiff
       }
 
     }
     // respond with the current best friend when done the loop 
     res.json(currentBestFriend)
+    res.end()
+    //test 
   })
 }
 

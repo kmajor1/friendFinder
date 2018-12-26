@@ -201,10 +201,11 @@
     crossorigin="anonymous"></script>
   <script>
     // global variables 
-    let scores = []
-    let scoreElements = $(".question")
+    
     // submit handler 
     let handleSubmit = function (event) {
+      let scores = []
+    let scoreElements = $(".question")
       // prevent default behaviour 
       event.preventDefault()
       // structure and array of scores 
