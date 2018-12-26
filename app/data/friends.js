@@ -1,8 +1,8 @@
 let friends = [
   {
     // mid-score user 
-    "userName":"Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "userName":"Angela Martin",
+    "photo":"https://media.giphy.com/media/iFbunNLuHo1PO/giphy.gif",
     "scores":[
         5,
         1,
