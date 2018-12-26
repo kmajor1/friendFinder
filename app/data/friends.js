@@ -18,8 +18,8 @@ let friends = [
   },
   {
     // low score user, expect this as a result of entering low scores 
-    "userName": "Bob",
-    "photo": "someURL",
+    "userName": "Michael Scott",
+    "photo": "https://media.giphy.com/media/12XMGIWtrHBl5e/giphy.gif",
     "scores": [
       1,
       1,
@@ -34,8 +34,8 @@ let friends = [
     ]
   },
   {
-    "userName":"HighScorer",
-    "photo": "someURL",
+    "userName":"Kevin Malone",
+    "photo": "https://media.giphy.com/media/QItLfsafwiRS8/giphy.gif",
     "scores": [
       5,
       5,
